@@ -13,7 +13,7 @@ Run `./stegano.py -h` for help message.
 
 ### Decoding
 
-`./stegano.py decode -s <source-image>
+`./stegano.py decode -s <source-image>`
 
 ### Creating a blank image
 
