@@ -1,0 +1,40 @@
+#! /bin/bash
+
+Debug "Reconfigurando servicio de syslog"
+rm -f /etc/syslog.conf
+(
+echo "auth,authpriv.*			/var/log/auth.log"
+echo "*.*;auth,authpriv.none		/var/log/syslog"
+echo "#cron.*				/var/log/cron.log"
+echo "daemon.*			/var/log/daemon.log"
+echo "kern.*				/var/log/kern.log"
+echo "lpr.*				/var/log/lpr.log"
+echo "mail.*				/var/log/mail.log"
+echo "user.*				/var/log/user.log"
+echo "uucp.*				/var/log/uucp.log"
+echo ""
+echo "mail.info			-/var/log/mail.info"
+echo "mail.warn			-/var/log/mail.warn"
+echo "mail.err			/var/log/mail.err"
+echo ""
+echo "news.crit			/var/log/news/news.crit"
+echo "news.err			/var/log/news/news.err"
+echo "news.notice			-/var/log/news/news.notice"
+echo ""
+echo "*.=debug;\\"
+echo "	auth,authpriv.none;\\"
+echo "	news.none;mail.none	-/var/log/debug"
+echo "*.=info;*.=notice;*.=warn;\\"
+echo "	auth,authpriv.none;\\"
+echo "	cron,daemon.none;\\"
+echo "	mail,news.none		-/var/log/messages"
+echo ""
+echo "*.emerg				*"
+echo ""
+echo "daemon.*;mail.*;\\"
+echo "	news.crit;news.err;news.notice;\\"
+echo "	*.=debug;*.=info;\\"
+echo "	*.=notice;*.=warn	|/dev/xconsole"
+) > /etc/syslog.conf
+sleep 2
+/etc/init.d/sysklogd restart

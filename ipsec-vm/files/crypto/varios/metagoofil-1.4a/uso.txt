@@ -1,0 +1,1 @@
+ ./metagoofil.py -d materias.fi.uba.ar -l 10 -f all -o salida.html -t micro-files/

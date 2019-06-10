@@ -1,0 +1,63 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=AR, ST=BA, L=Buenos Aires, O=66.69-Criptografia
+        Validity
+            Not Before: Jan 29 23:40:51 2008 GMT
+            Not After : Jan 26 23:40:51 2018 GMT
+        Subject: C=AR, ST=BA, O=66.69-Criptografia, CN=ssl-server
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:d7:8c:b0:9a:80:b4:3e:5a:db:94:df:b3:2e:bf:
+                    f8:cf:21:e4:da:da:10:41:bc:87:28:7c:c9:bc:71:
+                    27:cd:54:78:18:5f:f5:a2:e5:26:37:13:ae:95:7a:
+                    ab:05:a5:ae:0e:45:dc:31:bf:1a:ab:5c:f3:05:c8:
+                    3a:07:61:8f:94:3f:f5:7c:bf:33:ec:8d:96:a7:d3:
+                    4c:25:2e:cf:9f:56:7d:57:27:9a:e5:76:dc:e6:66:
+                    c3:5d:c4:ac:a4:40:6e:a8:1b:91:3b:44:1e:3f:d7:
+                    52:b7:ed:d7:88:9a:93:44:6e:52:b4:9e:4b:e2:36:
+                    44:12:72:ca:e4:92:a5:4a:f5
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                37:16:B7:66:A4:BB:D0:64:20:3E:6F:EC:60:9D:D4:3C:72:AF:43:47
+            X509v3 Authority Key Identifier: 
+                keyid:7D:5A:71:F5:2D:13:5A:3D:20:7B:FC:6D:5A:16:CD:94:80:F8:CC:9E
+                DirName:/C=AR/ST=BA/L=Buenos Aires/O=66.69-Criptografia
+                serial:BF:6A:DA:E2:FE:AB:AE:02
+
+    Signature Algorithm: md5WithRSAEncryption
+        2b:35:32:fa:33:af:e9:d5:4f:5d:8d:c0:4d:15:74:93:97:7b:
+        d3:b0:ff:64:cb:39:0b:37:e3:3b:fe:2b:cb:ac:c3:06:a6:81:
+        af:83:15:59:a6:b6:19:a6:f8:ad:48:e4:6f:d5:6d:d8:cd:2f:
+        ef:dc:08:82:d6:7e:ac:8a:b5:6b:51:0f:64:9c:d4:0d:f2:6d:
+        b5:71:c5:f9:5b:de:22:9a:5b:53:94:08:15:4b:a5:c9:b4:c7:
+        9f:d8:8c:59:b6:52:07:15:6b:66:71:ee:a3:92:b0:0e:a6:15:
+        6d:7c:1e:2d:fc:cc:38:38:fa:dc:ae:ad:98:36:7b:f9:f5:e6:
+        08:06
+-----BEGIN CERTIFICATE-----
+MIIC7DCCAlWgAwIBAgIBATANBgkqhkiG9w0BAQQFADBOMQswCQYDVQQGEwJBUjEL
+MAkGA1UECBMCQkExFTATBgNVBAcTDEJ1ZW5vcyBBaXJlczEbMBkGA1UEChMSNjYu
+NjktQ3JpcHRvZ3JhZmlhMB4XDTA4MDEyOTIzNDA1MVoXDTE4MDEyNjIzNDA1MVow
+TDELMAkGA1UEBhMCQVIxCzAJBgNVBAgTAkJBMRswGQYDVQQKExI2Ni42OS1Dcmlw
+dG9ncmFmaWExEzARBgNVBAMTCnNzbC1zZXJ2ZXIwgZ8wDQYJKoZIhvcNAQEBBQAD
+gY0AMIGJAoGBANeMsJqAtD5a25Tfsy6/+M8h5NraEEG8hyh8ybxxJ81UeBhf9aLl
+JjcTrpV6qwWlrg5F3DG/Gqtc8wXIOgdhj5Q/9Xy/M+yNlqfTTCUuz59WfVcnmuV2
+3OZmw13ErKRAbqgbkTtEHj/XUrft14iak0RuUrSeS+I2RBJyyuSSpUr1AgMBAAGj
+gdswgdgwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYdT3BlblNTTCBHZW5lcmF0
+ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFDcWt2aku9BkID5v7GCd1Dxyr0NHMH4G
+A1UdIwR3MHWAFH1acfUtE1o9IHv8bVoWzZSA+MyeoVKkUDBOMQswCQYDVQQGEwJB
+UjELMAkGA1UECBMCQkExFTATBgNVBAcTDEJ1ZW5vcyBBaXJlczEbMBkGA1UEChMS
+NjYuNjktQ3JpcHRvZ3JhZmlhggkAv2ra4v6rrgIwDQYJKoZIhvcNAQEEBQADgYEA
+KzUy+jOv6dVPXY3ATRV0k5d707D/ZMs5CzfjO/4ry6zDBqaBr4MVWaa2Gab4rUjk
+b9Vt2M0v79wIgtZ+rIq1a1EPZJzUDfJttXHF+VveIppbU5QIFUulybTHn9iMWbZS
+BxVrZnHuo5KwDqYVbXweLfzMODj63K6tmDZ7+fXmCAY=
+-----END CERTIFICATE-----
