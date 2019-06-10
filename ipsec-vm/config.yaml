@@ -6,4 +6,10 @@ machine:
 
 nodes:
   - name: "crypto-1"
+    nets: [ "net-1" ]
+  - name: "crypto-2"
     nets: [ "net-1", "net-2" ]
+  - name: "crypto-3"
+    nets: [ "net-2", "net-3" ]
+  - name: "crypto-4"
+    nets: [ "net-3" ]
