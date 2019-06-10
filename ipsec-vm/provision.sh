@@ -13,5 +13,7 @@ cp -r /vagrant/files/crypto /crypto
 
 apt-get install -y git
 apt-get install -y wireshark
+apt-get install -y libreswan
+apt-get install strongswan-starter
 
 
