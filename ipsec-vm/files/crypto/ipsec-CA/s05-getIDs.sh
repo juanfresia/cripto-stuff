@@ -22,8 +22,8 @@ fi
 Debug "////////////////////////////////////"
 Debug "Obteniendo datos de los certificados"
 
-idleft=`grep "Subject:" $ROUTERS_PATH/r1.pem |cut -d: -f 2`
-idright=`grep "Subject:" $ROUTERS_PATH/r2.pem |cut -d: -f 2`
+idleft=`grep "Subject:" $ROUTERS_PATH/${R1_HOSTNAME}.pem |cut -d: -f 2`
+idright=`grep "Subject:" $ROUTERS_PATH/${R2_HOSTNAME}.pem |cut -d: -f 2`
 
 
 rm -f $OPERATING_PATH/ids

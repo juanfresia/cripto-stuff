@@ -22,11 +22,13 @@ fi
 
 Debug "////////////////////////////////////////////////"
 Debug "//  copiando zip con certificados desde router 1"
-Debug "  scp root@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH"
+Debug "  scp vagrant@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH"
+Debug "  (password is \"vagrant\")"
 echo
 
-scp root@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH
+scp vagrant@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH
 
+mkdir -p $ROUTERS_PATH
 Debug "Descompactando e instalando los certificados"
 unzip -j $OPERATING_PATH/forr2.zip -d $ROUTERS_PATH
 
