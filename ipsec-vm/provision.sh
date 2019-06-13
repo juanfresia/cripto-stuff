@@ -6,6 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y build-essential zip
 
+# Install graphical environment
 apt-get install -y lubuntu-desktop
 apt-get install -y virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 

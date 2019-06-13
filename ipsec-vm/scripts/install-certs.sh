@@ -2,6 +2,15 @@
 
 set -eu
 
+## Takes the generated certificates under ${KEY_DIR} and installs them
+## in the NSS database for each node. This script needs to be ran in _both_
+## R1 and R2, the hostname of the nodes is used to choose which certificates to
+## include in the DB.
+##
+## After the certificates are installed, ipsec is restarted.
+## You should be able to use scripts/add-connection.sh in _both_ nodes
+## and scripts/start-connection.sh in _only one_ of them to start the tunnel.
+
 export KEY_DIR="/vagrant/certs"
 export CONFIGS="/vagrant/scripts"
 

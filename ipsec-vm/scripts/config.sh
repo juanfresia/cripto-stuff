@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# export KEY_CONFIG="$D"/openssl.cnf
-# export KEY_DIR=$OPERATING_PATH/rootCA
 GRUPO=5
 
 export KEY_SIZE="1024"
@@ -10,7 +8,6 @@ export KEY_PROVINCE=BA
 export KEY_CITY="Buenos Aires"
 export KEY_ORG="6669-Seguridad Redes"
 export KEY_EMAIL=""
-export KEY_ALTNAMES="something"
 
 export CA_CN="grupo${GRUPO}"
 
@@ -45,10 +42,12 @@ H2_IP="10.$GRUPO.2.2"
 H2_MASCARA="255.255.255.0"
 
 # Variables para configuracion de IPSEC
+## TODO: currently unused
 SCRIPTS_LIB="/crypto/lib"
 DIR_CLAVES_IPSEC="/tmp"
 ARCHIVO_CLAVE_IPSEC_R1="$DIR_CLAVES_IPSEC/left.key"
 ARCHIVO_CLAVE_IPSEC_R2="$DIR_CLAVES_IPSEC/right.key"
+
 #Valores posibles: 
 # - esp-psk: configura el tunel encriptado con claves compartidas
 # - esp-rsa: configura el tunel encriptado con claves RSA
@@ -56,7 +55,3 @@ ARCHIVO_CLAVE_IPSEC_R2="$DIR_CLAVES_IPSEC/right.key"
 # - ah: configura el tunel para hacer autenticacion
 TIPO_TUNEL="esp-rsa"	
 
-# Variables generales
-#$ARCHIVO_HOSTS="/etc/hosts"
-#ARCHIVO_IPSEC="/etc/ipsec.conf"
-#ARCHIVO_IPSEC_SEC="/etc/ipsec.secrets"

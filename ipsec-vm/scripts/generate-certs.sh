@@ -8,8 +8,21 @@ set -eu
 ##
 ## This script uses the following env variables:
 ##
+##   - KEY_SIZE
+##   - KEY_COUNTRY
+##   - KEY_PROVINCE
+##   - KEY_CITY
+##   - KEY_ORG
+##   - KEY_EMAIL
+##   - CA_CN        (CA common name)
+##   - R1_HOSTNAME  (crypto-2 by default)
+##   - R2_HOSTNAME  (crypto-3 by default)
 ##
 ## Configs for openssl are taken from ${CONFIGS}/openssl.cnf
+##
+## Certificates are stored in ${KEY_DIR}
+## It is recommended to keep the directory within /vagrant
+## to make it easy to share, as they will be needed in both R1 and R2.
 
 export KEY_DIR="/vagrant/certs"
 export CONFIGS="/vagrant/scripts"
