@@ -23,7 +23,7 @@ fi
 
 
 Debug "Revocando certificado del router 1"
-$D/revoke-full r1
+$D/revoke-full ${R1_HOSTNAME}
 
 Debug "Instalando nueva lista de certificados revocados en el equipo local"
 rm -f $IP_CERTS_PATH/crls/crl.pem

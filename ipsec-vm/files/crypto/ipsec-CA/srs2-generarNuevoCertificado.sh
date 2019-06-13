@@ -22,12 +22,12 @@ fi
 
 
 Debug "Generando un nuevo certificado. Ingresar los mismos datos que en el certificado previo (y mismo password)"
-$D/build-key-pass r1n
+$D/build-key-pass ${R1_HOSTNAME}n
 
 Debug "Borrando certificado previo"
-rm -f $IP_CERTS_PATH/certs/r1.pem
-rm -f $IP_CERTS_PATH/private/r1.key
+rm -f $IP_CERTS_PATH/certs/${R1_HOSTNAME}.pem
+rm -f $IP_CERTS_PATH/private/${R1_HOSTNAME}.key
 
 Debug "Instalando nuevo certificado"
-cp -f $CAPATH/r1n.crt $IP_CERTS_PATH/certs/r1.pem
-mv -f $CAPATH/r1n.key $IP_CERTS_PATH/private/r1.key
+cp -f $CAPATH/${R1_HOSTNAME}n.crt $IP_CERTS_PATH/certs/${R1_HOSTNAME}.pem
+mv -f $CAPATH/${R1_HOSTNAME}n.key $IP_CERTS_PATH/private/${R1_HOSTNAME}.key

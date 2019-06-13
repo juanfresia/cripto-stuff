@@ -53,21 +53,21 @@ fi
 Debug "Obteniendo los certificados remotos"
 case "$HOSTNAME" in
 	"$R1_HOSTNAME")
-		scp root@$R1_PUB_IP:$OPERATING_PATH/forr2.tar $OPERATING_PATH
-		tar -xvpf $OPERATING_PATH/forr2.tar -C $ROUTERS_PATH
+		scp root@$R1_PUB_IP:$OPERATING_PATH/for${R2_HOSTNAME}.tar $OPERATING_PATH
+		tar -xvpf $OPERATING_PATH/for${R2_HOSTNAME}.tar -C $ROUTERS_PATH
 		Debug "Instalando los certivicados remotos"
 		mv -f $ROUTERS_PATH/cacert.pem $IP_CERTS_PATH/cacerts
-		mv -f $ROUTERS_PATH/r1.pem $IP_CERTS_PATH/certs
-		mv -f $ROUTERS_PATH/r1.key $IP_CERTS_PATH/private
+		mv -f $ROUTERS_PATH/${R1_HOSTNAME}.pem $IP_CERTS_PATH/certs
+		mv -f $ROUTERS_PATH/${R1_HOSTNAME}.key $IP_CERTS_PATH/private
 
 	;;
 	"$R2_HOSTNAME")
-		scp root@$R1_PUB_IP:$OPERATING_PATH/forr1.tar $OPERATING_PATH
-		tar -xvpf $OPERATING_PATH/forr1.tar -C $ROUTERS_PATH
+		scp root@$R1_PUB_IP:$OPERATING_PATH/for${R1_HOSTNAME}.tar $OPERATING_PATH
+		tar -xvpf $OPERATING_PATH/for${R1_HOSTNAME}.tar -C $ROUTERS_PATH
 		Debug "Instalando los certivicados remotos"
 		mv -f $ROUTERS_PATH/cacert.pem $IP_CERTS_PATH/cacerts
-		mv -f $ROUTERS_PATH/r2.pem $IP_CERTS_PATH/certs
-		mv -f $ROUTERS_PATH/r2.key $IP_CERTS_PATH/private
+		mv -f $ROUTERS_PATH/${R2_HOSTNAME}.pem $IP_CERTS_PATH/certs
+		mv -f $ROUTERS_PATH/${R2_HOSTNAME}.key $IP_CERTS_PATH/private
 
 	;;
 esac

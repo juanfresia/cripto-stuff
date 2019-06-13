@@ -52,16 +52,16 @@ fi
 Debug "Firmando los certificados"
 case "$HOSTNAME" in
 	"$R1_HOSTNAME")
-		$D/sign-req r1
+		$D/sign-req ${R1_HOSTNAME}
 		Debug "copiando los certificados y moviendo claves"
-		cp $CAPATH/r1.crt $ROUTERS_PATH/r1.pem
-		mv $CAPATH/r1.key $ROUTERS_PATH
+		cp $CAPATH/${R1_HOSTNAME}.crt $ROUTERS_PATH/${R1_HOSTNAME}.pem
+		mv $CAPATH/${R1_HOSTNAME}.key $ROUTERS_PATH
 	;;
 	"$R2_HOSTNAME")
-		$D/sign-req r2
+		$D/sign-req ${R2_HOSTNAME}
 		Debug "copiando los certificados y moviendo claves"
-		cp $CAPATH/r2.crt $ROUTERS_PATH/r2.pem
-		mv $CAPATH/r2.key $ROUTERS_PATH
+		cp $CAPATH/${R2_HOSTNAME}.crt $ROUTERS_PATH/${R2_HOSTNAME}.pem
+		mv $CAPATH/${R2_HOSTNAME}.key $ROUTERS_PATH
 	;;
 esac
 Debug "listo."

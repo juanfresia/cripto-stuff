@@ -137,8 +137,8 @@ case $PARAM in
 		echo "	authby=rsasig"
 		echo "	leftrsasigkey=%cert"
 		echo "	rightrsasigkey=%cert"
-		echo "	leftcert=$IP_CERTS_PATH/certs/r1.pem"
-		echo "	rightcert=$IP_CERTS_PATH/certs/r2.pem"
+		echo "	leftcert=$IP_CERTS_PATH/certs/${R1_HOSTNAME}.pem"
+		echo "	rightcert=$IP_CERTS_PATH/certs/${R2_HOSTNAME}.pem"
 		) >> $ARCHIVO_IPSEC
 		cat $OPERATING_PATH/ids >> $ARCHIVO_IPSEC
 	;;

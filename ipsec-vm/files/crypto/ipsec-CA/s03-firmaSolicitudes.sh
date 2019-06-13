@@ -22,23 +22,23 @@ fi
 echo
 Debug "////////////////////////////////"
 Debug "////   Firmando los certificados"
-Debug "Ejecutando $D/sign-req r1"
-$D/sign-req r1
+Debug "Ejecutando $D/sign-req ${R1_HOSTNAME}"
+$D/sign-req ${R1_HOSTNAME}
 
 echo
 Debug "////////////////////////////////"
 Debug "////   Firmando los certificados"
-Debug "Ejecutando $D/sign-req r2"
-$D/sign-req r2
+Debug "Ejecutando $D/sign-req ${R2_HOSTNAME}"
+$D/sign-req ${R2_HOSTNAME}
 
 echo
 Debug "///////////////////////////////////////////"
 Debug "copiando los certificados y moviendo claves"
 set -x
-cp $CAPATH/r1.crt $ROUTERS_PATH/r1.pem
-cp $CAPATH/r2.crt $ROUTERS_PATH/r2.pem
-mv $CAPATH/r1.key $ROUTERS_PATH
-mv $CAPATH/r2.key $ROUTERS_PATH
+cp $CAPATH/${R1_HOSTNAME}.crt $ROUTERS_PATH/${R1_HOSTNAME}.pem
+cp $CAPATH/${R2_HOSTNAME}.crt $ROUTERS_PATH/${R2_HOSTNAME}.pem
+mv $CAPATH/${R1_HOSTNAME}.key $ROUTERS_PATH
+mv $CAPATH/${R2_HOSTNAME}.key $ROUTERS_PATH
 set +x
 
 Debug "listo."

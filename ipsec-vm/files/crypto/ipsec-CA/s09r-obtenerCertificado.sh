@@ -22,30 +22,30 @@ fi
 
 Debug "////////////////////////////////////////////////"
 Debug "//  copiando zip con certificados desde router 1"
-Debug "  scp vagrant@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH"
+Debug "  scp vagrant@$R1_PUB_IP:$OPERATING_PATH/for${R2_HOSTNAME}.zip $OPERATING_PATH"
 Debug "  (password is \"vagrant\")"
 echo
 
-scp vagrant@$R1_PUB_IP:$OPERATING_PATH/forr2.zip $OPERATING_PATH
+scp vagrant@$R1_PUB_IP:$OPERATING_PATH/for${R2_HOSTNAME}.zip $OPERATING_PATH
 
 mkdir -p $ROUTERS_PATH
 Debug "Descompactando e instalando los certificados"
-unzip -j $OPERATING_PATH/forr2.zip -d $ROUTERS_PATH
+unzip -j $OPERATING_PATH/for${R2_HOSTNAME}.zip -d $ROUTERS_PATH
 
 Debug "//////////////////////////////////////"
 Debug "Instalando certificados en el router 2"
 
 mkdir -p $IP_CERTS_PATH/certs
 
-rm -f $IP_CERTS_PATH/certs/r2.pem
-rm -f $IP_CERTS_PATH/private/r2.key
+rm -f $IP_CERTS_PATH/certs/${R2_HOSTNAME}.pem
+rm -f $IP_CERTS_PATH/private/${R2_HOSTNAME}.key
 rm -f $IP_CERTS_PATH/cacerts/cacert.pem
 rm -f $IP_CERTS_PATH/crl.pem
 
 set -x
 mv -f $ROUTERS_PATH/cacert.pem $IP_CERTS_PATH/cacerts
-mv -f $ROUTERS_PATH/r2.pem $IP_CERTS_PATH/certs
-mv -f $ROUTERS_PATH/r2.key $IP_CERTS_PATH/private
+mv -f $ROUTERS_PATH/${R2_HOSTNAME}.pem $IP_CERTS_PATH/certs
+mv -f $ROUTERS_PATH/${R2_HOSTNAME}.key $IP_CERTS_PATH/private
 mv -f $ROUTERS_PATH/ids $OPERATING_PATH
 mv -f $ROUTERS_PATH/crl.pem $IP_CERTS_PATH/crls
 set +x

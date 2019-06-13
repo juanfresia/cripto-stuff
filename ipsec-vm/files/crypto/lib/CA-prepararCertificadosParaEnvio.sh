@@ -55,13 +55,13 @@ case "$HOSTNAME" in
 		cp -f $CAPATH/ca.crt $ROUTERS_PATH/cacert.pem
 		cp -f $CAPATH/crl.pem $ROUTERS_PATH
 		cp -f $OPERATING_PATH/ids $ROUTERS_PATH
-		tar -cvf $OPERATING_PATH/forr2.tar  $ROUTERS_PATH/*
+		tar -cvf $OPERATING_PATH/for${R2_HOSTNAME}.tar  $ROUTERS_PATH/*
 	;;
 	"R2_HOSTNAME")
 		cp -f $CAPATH/ca.crt $ROUTERS_PATH/cacert.pem
 		cp -f $CAPATH/crl.pem $ROUTERS_PATH
 		cp -f $OPERATING_PATH/ids $ROUTERS_PATH
-		tar -cvf $OPERATING_PATH/forr2.tar  $ROUTERS_PATH/*
+		tar -cvf $OPERATING_PATH/for${R2_HOSTNAME}.tar  $ROUTERS_PATH/*
 	;;
 esac
 Debug "listo."

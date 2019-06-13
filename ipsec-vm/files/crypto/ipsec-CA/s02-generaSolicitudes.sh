@@ -25,13 +25,13 @@ rm -r -f $ROUTERS_PATH
 mkdir $ROUTERS_PATH
 Debug "///////////////////////////////////////////"
 Debug "Generando peticiones de firma para router 1"
-Debug "/// Ejecutando $D/build-req-pass r1"
+Debug "/// Ejecutando $D/build-req-pass ${R1_HOSTNAME}"
 
-$D/build-req-pass r1
+$D/build-req-pass ${R1_HOSTNAME}
 
 Debug "///////////////////////////////////////////"
 Debug "Generando peticiones de firma para router 2"
-Debug "/// Ejecutando $D/build-req-pass r2"
-$D/build-req-pass r2
+Debug "/// Ejecutando $D/build-req-pass ${R2_HOSTNAME}"
+$D/build-req-pass ${R2_HOSTNAME}
 
 Debug "listo."

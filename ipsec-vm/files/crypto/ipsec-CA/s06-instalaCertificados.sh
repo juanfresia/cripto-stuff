@@ -23,9 +23,9 @@ echo
 Debug "/////////////////////////////////////////////////////"
 Debug "Borrando previos certificados en $IP_CERTS_PATH/certs"
 rm -f $IP_CERTS_PATH/cacerts/cacert.pem
-rm -f $IP_CERTS_PATH/certs/r1.pem
-rm -f $IP_CERTS_PATH/certs/r2.pem
-rm -f $IP_CERTS_PATH/private/r1.key
+rm -f $IP_CERTS_PATH/certs/${R1_HOSTNAME}.pem
+rm -f $IP_CERTS_PATH/certs/${R2_HOSTNAME}.pem
+rm -f $IP_CERTS_PATH/private/${R1_HOSTNAME}.key
 rm -f $IP_CERTS_PATH/crls/crl.pem
 
 
@@ -37,8 +37,8 @@ mkdir -p $IP_CERTS_PATH/private
 mkdir -p $IP_CERTS_PATH/crls
 cp -f $CAPATH/ca.crt $IP_CERTS_PATH/cacerts/cacert.pem
 cp -f $CAPATH/crl.pem $IP_CERTS_PATH/crls
-cp -f $ROUTERS_PATH/r1.pem $IP_CERTS_PATH/certs
-cp -f $ROUTERS_PATH/r1.key $IP_CERTS_PATH/private
+cp -f $ROUTERS_PATH/${R1_HOSTNAME}.pem $IP_CERTS_PATH/certs
+cp -f $ROUTERS_PATH/${R1_HOSTNAME}.key $IP_CERTS_PATH/private
 set +x
 Debug "listo."
 

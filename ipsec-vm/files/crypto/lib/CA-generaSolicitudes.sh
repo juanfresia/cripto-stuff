@@ -55,10 +55,10 @@ mkdir $ROUTERS_PATH
 case "$HOSTNAME" in
 	"R1_HOSTNAME")
 		Debug "Generando peticiones de firma para router 1"
-		$D/build-req-pass r1
+		$D/build-req-pass ${R1_HOSTNAME}
 	;;
 	"R2_HOSTNAME")
 		Debug "Generando peticiones de firma para router 2"
-		$D/build-req-pass r2
+		$D/build-req-pass ${R2_HOSTNAME}
 	;;
 esac

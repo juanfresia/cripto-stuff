@@ -20,3 +20,12 @@ apt-get install -y libreswan
 sed -i -e 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 service sshd restart
 
+
+# Enable IP forwarding
+sysctl -w net.ipv4.ip_forward=1
+
+# Disable magic options ipsec doesnt like
+sysctl -w net.ipv4.conf.all.send_redirects=0
+sysctl -w net.ipv4.conf.all.accept_redirects=0
+sysctl -w net.ipv4.conf.default.send_redirects=0
+sysctl -w net.ipv4.conf.default.accept_redirects=0

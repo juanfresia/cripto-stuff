@@ -26,7 +26,7 @@ cp -f $CAPATH/ca.crt $ROUTERS_PATH/cacert.pem
 cp -f $CAPATH/crl.pem $ROUTERS_PATH
 cp -f $OPERATING_PATH/ids $ROUTERS_PATH
 
-zip $OPERATING_PATH/forr2.zip -r $ROUTERS_PATH
+zip $OPERATING_PATH/for${R2_HOSTNAME}.zip -r $ROUTERS_PATH
 set +x
 
 Debug "Borrando directorio"
