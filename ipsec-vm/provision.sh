@@ -47,4 +47,6 @@ if [[ ${NODE_NAME} == "crypto-4" ]]; then
     ip route add 10.5.1.0/24 via 10.5.2.1
 fi
 
-
+# Install custom vim
+git clone https://github.com/juanfresia/.vim /home/vagrant/.vim
+ln -s /home/vagrant/.vim/.vimrc /home/vagrant/.vimrc
