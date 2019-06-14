@@ -39,7 +39,7 @@ if [[ $(hostname) == "${R1_HOSTNAME}" ]]; then
 
     ## Install self certificate with key (PKCS#12 format)
     pk12util -i ${KEY_DIR}/${R1_HOSTNAME}.pfx -d ${NSS_DB} -n ${R1_HOSTNAME}
-    IFACE=${R1_PUB_INTERFAZ}
+    IFACE=${R1_PUB_IFACE}
 elif [[ $(hostname) == "${R2_HOSTNAME}" ]]; then
     ## R2 case
     ## Add peer certificate as "untrusted" (-t ",,")
@@ -51,7 +51,7 @@ elif [[ $(hostname) == "${R2_HOSTNAME}" ]]; then
 
     ## Install self certificate with key (PKCS#12 format)
     pk12util -i ${KEY_DIR}/${R2_HOSTNAME}.pfx -d ${NSS_DB} -n ${R2_HOSTNAME}
-    IFACE=${R2_PUB_INTERFAZ}
+    IFACE=${R2_PUB_IFACE}
 else
     exit 0
 fi
@@ -70,18 +70,18 @@ conn %default
     disablearrivalcheck=no
 
 conn crypto
-    left=192.168.5.41
-    leftsubnet=10.5.1.0/24
-    right=192.168.5.42
-    rightsubnet=10.5.2.0/24
+    left=${R1_PUB_IP}
+    leftsubnet=${R1_PRIV_NET}
+    right=${R2_PUB_IP}
+    rightsubnet=${R2_PRIV_NET}
     auto=add
     authby=rsasig
     leftrsasigkey=%cert
     rightrsasigkey=%cert
-    leftcert=crypto-2
-    rightcert=crypto-3
-    leftid="C=AR, ST=BA, O=6669-Seguridad Redes, CN=crypto-2"
-    rightid="C=AR, ST=BA, O=6669-Seguridad Redes, CN=crypto-3"
+    leftcert=${R1_HOSTNAME}
+    rightcert=${R2_HOSTNAME}
+    leftid="${R1_SUBJECT_ID}"
+    rightid="${R2_SUBJECT_ID}"
 EOF
 
 ipsec stop

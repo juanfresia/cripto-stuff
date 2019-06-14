@@ -12,9 +12,9 @@ cd ${KEY_DIR}
 ## Only R1 and R2 should configure RSA.
 
 if [[ $(hostname) == "${R1_HOSTNAME}" ]]; then
-    IFACE=${R1_PUB_INTERFAZ}
+    IFACE=${R1_PUB_IFACE}
 elif [[ $(hostname) == "${R2_HOSTNAME}" ]]; then
-    IFACE=${R2_PUB_INTERFAZ}
+    IFACE=${R2_PUB_IFACE}
 else
     exit 0
 fi
@@ -33,10 +33,10 @@ conn %default
     disablearrivalcheck=no
 
 conn crypto
-    left=192.168.5.41
-    leftsubnet=10.5.1.0/24
-    right=192.168.5.42
-    rightsubnet=10.5.2.0/24
+    left=${R1_PUB_IP}
+    leftsubnet=${R1_PRIV_NET}
+    right=${R2_PUB_IP}
+    rightsubnet=${R2_PRIV_NET}
     auto=add
     authby=rsasig
     $(cat ${KEY_DIR}/left.key)
