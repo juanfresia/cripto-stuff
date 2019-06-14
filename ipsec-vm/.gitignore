@@ -3,3 +3,4 @@
 *.squashfs
 *.log
 certs
+rsa
