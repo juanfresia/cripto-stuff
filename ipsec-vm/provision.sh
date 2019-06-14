@@ -46,11 +46,37 @@ EOF
 ## Add routes for hosts through GW
 NODE_NAME=$(hostname)
 if [[ ${NODE_NAME} == "crypto-1" ]]; then
-    ip route add 10.5.2.0/24 via 10.5.1.1
+    # ip route add 10.5.2.0/24 via 10.5.1.1
+    cat << EOF | sudo tee /etc/netplan/51-routes.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s8:
+     routes:
+       - to: 10.5.2.0/24
+         via: 10.5.1.1
+         metric: 100
+EOF
 fi
+
 if [[ ${NODE_NAME} == "crypto-4" ]]; then
-    ip route add 10.5.1.0/24 via 10.5.2.1
+    # ip route add 10.5.1.0/24 via 10.5.2.1
+    cat << EOF | sudo tee /etc/netplan/51-routes.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s8:
+     routes:
+       - to: 10.5.1.0/24
+         via: 10.5.2.1
+         metric: 100
+EOF
 fi
+
+## Apply changes in configuration
+netplan apply
 
 # Install custom vim
 git clone https://github.com/juanfresia/.vim /home/vagrant/.vim
