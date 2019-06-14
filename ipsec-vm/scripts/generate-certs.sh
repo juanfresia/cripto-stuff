@@ -57,6 +57,10 @@ openssl req -days 3650 -new -keyout "${R2_HOSTNAME}.key" -out ${R2_HOSTNAME}.csr
 
 ## Sing the certificates for R1 and R2 using the CA
 
+## These files are needed for CA signing
+touch ${KEY_DIR}/index.txt
+echo 01 > ${KEY_DIR}/serial
+
 ## TODO: replace with function sing-req
 openssl ca -days 3650 -out ${R1_HOSTNAME}.crt -in ${R1_HOSTNAME}.csr -config "$KEY_CONFIG"
 openssl ca -days 3650 -out ${R2_HOSTNAME}.crt -in ${R2_HOSTNAME}.csr -config "$KEY_CONFIG"
