@@ -33,6 +33,7 @@ net.ipv4.conf.default.send_redirects=0
 net.ipv4.conf.default.accept_redirects=0
 EOF
 
+## TODO: Read all variables from config.sh
 # Update known hosts
 cat <<EOF | sudo tee /etc/hosts
 10.5.1.2    crypto-1

@@ -4,6 +4,7 @@ machine:
   memory: "1024"
   cpus: "2"
 
+  ## TODO: Generate this file from config.sh
 nodes:
   - name: "crypto-1"
     nets:
