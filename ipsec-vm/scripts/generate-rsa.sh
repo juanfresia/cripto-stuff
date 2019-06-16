@@ -12,7 +12,7 @@ NSS_DB_DIR="/var/lib/ipsec/nss"
 NSS_DB="sql:${NSS_DB_DIR}"
 
 ## Clean up NSS database (if any)
-rm ${NSS_DB_DIR}/*.db
+rm -f ${NSS_DB_DIR}/*.db
 ipsec initnss
 
 ## Clean up ipsec.secrets

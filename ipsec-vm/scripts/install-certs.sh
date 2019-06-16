@@ -23,7 +23,7 @@ NSS_DB_DIR="/var/lib/ipsec/nss"
 NSS_DB="sql:${NSS_DB_DIR}"
 
 ## Clean up NSS database (if any)
-rm ${NSS_DB_DIR}/*.db
+rm -rf ${NSS_DB_DIR}/*.db
 ipsec initnss
 
 ## Only R1 and R2 should install certificates.
