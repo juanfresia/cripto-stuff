@@ -1,0 +1,17 @@
+vagrant@crypto-3:/vagrant/scripts$ sudo crlutil -L -d sql:/var/lib/ipsec/nss
+
+
+CRL names                                CRL Type
+
+grupo5                                   CRL
+vagrant@crypto-3:/vagrant/scripts$ sudo crlutil -L -d sql:/var/lib/ipsec/nss -n grupo5
+CRL Info:
+:
+    Version: 1 (0x0)
+    Signature Algorithm: PKCS #1 SHA-256 With RSA Encryption
+    Issuer: "CN=grupo5,O=6669-Seguridad Redes,L=Buenos Aires,ST=BA,C=AR"
+    This Update: Mon Jun 17 03:07:25 2019
+    Next Update: Wed Jul 17 03:07:25 2019
+    Entry 1 (0x1):
+        Serial Number: 1 (0x1)
+        Revocation Date: Mon Jun 17 03:07:25 2019

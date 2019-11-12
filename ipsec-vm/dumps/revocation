@@ -1,0 +1,44 @@
+vagrant@crypto-3:/vagrant/scripts$ sudo ipsec auto --down crypto
+002 "crypto": terminating SAs using this connection
+002 "crypto" #2: deleting state (STATE_QUICK_R2) and sending notification
+005 "crypto" #2: ESP traffic information: in=504B out=504B
+002 "crypto" #1: deleting state (STATE_MAIN_R3) and sending notification
+
+
+vagrant@crypto-3:/vagrant/scripts$ sudo ipsec auto --up crypto
+002 "crypto" #4: initiating Main Mode
+104 "crypto" #4: STATE_MAIN_I1: initiate
+106 "crypto" #4: STATE_MAIN_I2: sent MI2, expecting MR2
+002 "crypto" #4: I am sending my cert
+002 "crypto" #4: I am sending a certificate request
+108 "crypto" #4: STATE_MAIN_I3: sent MI3, expecting MR3
+002 "crypto" #4: Peer ID is ID_DER_ASN1_DN: 'C=AR, ST=BA, O=6669-Seguridad Redes, CN=crypto-2'
+003 "crypto" #4: Certificate CN=grupo5,O=6669-Seguridad Redes,L=Buenos Aires,ST=BA,C=AR failed verification
+003 "crypto" #4: ERROR: Peer's Certificate has been revoked.
+002 "crypto" #4: certificate revoked!
+002 "crypto" #4: X509: Certificate rejected for this connection
+002 "crypto" #4: X509: CERT payload bogus or revoked
+218 "crypto" #4: STATE_MAIN_I3: INVALID_ID_INFORMATION
+002 "crypto" #4: sending encrypted notification INVALID_ID_INFORMATION to 192.168.5.41:500
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 0.5 seconds for response
+002 "crypto" #4: Peer ID is ID_DER_ASN1_DN: 'C=AR, ST=BA, O=6669-Seguridad Redes, CN=crypto-2'
+003 "crypto" #4: Certificate CN=grupo5,O=6669-Seguridad Redes,L=Buenos Aires,ST=BA,C=AR failed verification
+003 "crypto" #4: ERROR: Peer's Certificate has been revoked.
+002 "crypto" #4: certificate revoked!
+002 "crypto" #4: X509: Certificate rejected for this connection
+002 "crypto" #4: X509: CERT payload bogus or revoked
+218 "crypto" #4: STATE_MAIN_I3: INVALID_ID_INFORMATION
+002 "crypto" #4: sending encrypted notification INVALID_ID_INFORMATION to 192.168.5.41:500
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 1 seconds for response
+002 "crypto" #4: Peer ID is ID_DER_ASN1_DN: 'C=AR, ST=BA, O=6669-Seguridad Redes, CN=crypto-2'
+003 "crypto" #4: Certificate CN=grupo5,O=6669-Seguridad Redes,L=Buenos Aires,ST=BA,C=AR failed verification
+003 "crypto" #4: ERROR: Peer's Certificate has been revoked.
+002 "crypto" #4: certificate revoked!
+002 "crypto" #4: X509: Certificate rejected for this connection
+002 "crypto" #4: X509: CERT payload bogus or revoked
+218 "crypto" #4: STATE_MAIN_I3: INVALID_ID_INFORMATION
+002 "crypto" #4: sending encrypted notification INVALID_ID_INFORMATION to 192.168.5.41:500
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 2 seconds for response
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 4 seconds for response
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 8 seconds for response
+010 "crypto" #4: STATE_MAIN_I3: retransmission; will wait 16 seconds for response

@@ -1,0 +1,77 @@
+vagrant@crypto-2:/vagrant/scripts$ sudo certutil -L -d sql:/var/lib/ipsec/nss
+
+Certificate Nickname                                         Trust Attributes
+                                                             SSL,S/MIME,JAR/XPI
+
+grupo5                                                       CT,C,C
+crypto-2                                                     u,u,u
+vagrant@crypto-2:/vagrant/scripts$ sudo certutil -L -d sql:/var/lib/ipsec/nss -n crypto-2
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: PKCS #1 SHA-256 With RSA Encryption
+        Issuer: "CN=grupo5,O=6669-Seguridad Redes,L=Buenos Aires,ST=BA,C=AR"
+        Validity:
+            Not Before: Sun Jun 16 21:56:02 2019
+            Not After : Wed Jun 13 21:56:02 2029
+        Subject: "CN=crypto-2,O=6669-Seguridad Redes,ST=BA,C=AR"
+        Subject Public Key Info:
+            Public Key Algorithm: PKCS #1 RSA Encryption
+            RSA Public Key:
+                Modulus:
+                    de:40:3f:87:e8:57:ff:77:5c:06:d6:55:d9:2c:51:8f:
+                    cc:96:92:43:c2:bd:cf:9a:4d:49:da:8e:1e:07:66:2f:
+                    1f:e4:48:02:3c:48:44:6a:91:f3:b0:08:eb:9b:da:b9:
+                    f6:bb:0f:c1:b3:2c:53:db:85:4a:5c:a3:09:23:77:a6:
+                    96:65:2b:18:43:61:a1:58:30:af:8b:4a:7d:14:1d:8e:
+                    8b:fc:a8:c6:ff:07:17:ed:e4:87:ea:1e:04:e0:bd:8d:
+                    72:33:4a:e4:98:25:5f:42:79:35:17:2e:9c:57:5d:25:
+                    0b:8f:17:80:b0:cb:7f:07:12:12:59:e7:09:80:49:cf
+                Exponent: 65537 (0x10001)
+        Signed Extensions:
+            Name: Certificate Basic Constraints
+            Data: Is not a CA.
+
+            Name: Certificate Comment
+            Comment: "OpenSSL Generated Certificate"
+
+            Name: Certificate Subject Key ID
+            Data:
+                8e:a2:70:63:b3:07:cb:86:3a:0c:d3:ea:4c:c6:c7:59:
+                cb:d3:f0:41
+
+            Name: Certificate Authority Key Identifier
+            Key ID:
+                e5:da:91:9b:42:42:3d:6b:34:43:a7:db:b4:fe:0e:2e:
+                5a:86:5a:97
+            Issuer:
+                Directory Name: "CN=grupo5,O=6669-Seguridad Redes,L=Buenos Ai
+                    res,ST=BA,C=AR"
+            Serial Number:
+                00:af:09:3b:04:75:1a:e6:25
+
+    Signature Algorithm: PKCS #1 SHA-256 With RSA Encryption
+    Signature:
+        8b:86:85:a4:7c:df:b8:f5:67:8c:a6:5c:c2:be:fd:f3:
+        36:24:38:d0:c2:ec:25:c2:6a:a3:c4:8c:8d:0a:b0:ee:
+        4a:62:d4:0f:f0:80:60:17:e4:60:b7:8d:02:ba:9f:f3:
+        35:aa:af:5f:9c:54:16:25:87:e1:44:07:68:a6:1a:3c:
+        c9:ac:66:4b:d4:89:1f:ad:e7:c3:b9:f0:09:f0:13:0c:
+        c2:1a:20:cc:2d:ab:92:55:3b:5c:93:19:81:1d:91:08:
+        7f:51:9a:6c:34:d5:9a:9e:e4:41:7a:d1:43:a3:9f:3c:
+        9f:2b:8f:35:6e:67:b9:a3:95:bb:a7:8a:73:c8:14:ee
+    Fingerprint (SHA-256):
+        7B:A9:EA:DA:3A:37:37:71:10:7F:F2:88:F7:25:23:0C:97:06:C9:46:AF:C0:8D:33:9C:45:BA:50:53:A0:A9:5D
+    Fingerprint (SHA1):
+        8F:D4:F3:2B:6C:BE:3A:B4:72:96:4C:F1:52:11:60:93:F9:C0:9E:22
+
+    Mozilla-CA-Policy: false (attribute missing)
+    Certificate Trust Flags:
+        SSL Flags:
+            User
+        Email Flags:
+            User
+        Object Signing Flags:
+            User
+

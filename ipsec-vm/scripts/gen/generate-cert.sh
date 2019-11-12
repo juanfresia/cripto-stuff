@@ -46,7 +46,7 @@ fi
 SUBJECT=$1
 
 ## TODO: replace with function build-req-pass
-openssl req -days 3650 -new -keyout "${SUBJECT}.key" -out ${SUBJECT}.csr -config "$KEY_CONFIG"
+openssl req -days 3650 -nodes -new -keyout "${SUBJECT}.key" -out ${SUBJECT}.csr -config "$KEY_CONFIG"
 
 ## TODO: replace with function sing-req
 openssl ca -days 3650 -out ${SUBJECT}.crt -in ${SUBJECT}.csr -config "$KEY_CONFIG"
