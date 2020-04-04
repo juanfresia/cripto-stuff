@@ -1,4 +1,10 @@
 #! /usr/bin/env python3
+"""
+CLI tool to compute euclid algorithm, find gcd and
+inverse mod N
+"""
+
+import argparse
 
 def euclid(a, b, show=False):
     r0 = [a, 1, 0]
@@ -24,12 +30,25 @@ def inverse(a, n):
         return r[1]
     return 0
 
-print("euclid(1759, 550)")
-print(euclid(1759, 550, show=True))
+if __name__ == "__main__":
+    # Set arguments
+    parser = argparse.ArgumentParser(description='Compute euclid algorithm')
+    parser.add_argument('operation', help="Type of operation to perform", choices=['euclid', 'inverse', 'gcd'])
+    parser.add_argument('numA', help='First number', nargs=1, type=int)
+    parser.add_argument('numB', help='Second number', nargs=1, type=int)
+    parser.add_argument('-s', '--show', help='Show full procedure', action='store_true')
 
-print()
-print("gcd(1759, 550) = ", gcd(1759, 550))
+    args = parser.parse_args()
 
-print()
-print("inverse_550(1759) =", inverse(1759, 550))
+    a = args.numA[0]
+    b = args.numB[0]
+    show = args.show
 
+    if args.operation == "euclid":
+        res = euclid(a, b, show)
+    elif args.operation == "gcd":
+        res = gcd(a, b)
+    else:
+        res = inverse(a, b)
+
+    print(res)
